@@ -21,8 +21,8 @@
  |Column|Type|Options|
  |------|----|-------|
  |id|integer|
- |body|text|null: false|
- |image|string|null: true|
+ |body|text|
+ |image|string|
  |group_id|integer|null: false, foreign_key: true|
  |user_id|integer|null: false, foreign_key: true|
 
