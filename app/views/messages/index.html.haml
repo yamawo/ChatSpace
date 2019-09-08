@@ -1,0 +1,46 @@
+!!!
+%html
+    %head
+        = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+        = javascript_include_tag 'application', 'data-turbolinks-track' => true
+        = csrf_meta_tags
+    %body
+        .side-header
+            .side-header__box
+                .side-header__box__user-name
+                    Username
+                .side-header__box__menu
+                    .side-header__box__menu__group-create
+                    .side-header__box__menu__edit
+        .groups
+            .groups__group
+                .groups__group__title
+                    グループ名
+                .groups__group__message
+                    グループ内のメッセージ
+        .main-header
+            .main-header__edit
+                edit
+            .main-header__left-box
+                .main-header__left-box__group-name
+                    グループ名
+                .main-header__left-box__group-member
+        .messages
+            .messages__message
+                .messages__message__upper-box
+                    .messages__message__upper-box__name
+                        yamasaki
+                    .messages__message__upper-box__date
+                        2019-09-07
+                .messages__message__text
+                    おはよう
+        .form
+            .form__create-message
+                .form__create-message__type-message
+                    type a message
+                    .form__create-message__type-message__image
+                .form__create-message__send
+                    send
+
+
+    
