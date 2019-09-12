@@ -6,18 +6,14 @@
                 Edit
         .right__main-header__left-box
             .right__main-header__left-box__group-name
-                グループ名
+                = @group.name
             .right__main-header__left-box__group-member
-                Member : ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                Member : 
+                - @group.users.each do |user|
+                    %li.right__main-header__left-box__group-member__name 
+                        #{user.name}
     .right__messages
-        .right__messages__message
-            .right__messages__message__upper-box
-                .right__messages__message__upper-box__name
-                    yamasaki
-                .right__messages__message__upper-box__date
-                    2019-09-07
-            .right__messages__message__text
-                おはよう
+        = render @messages
     .right__box
         = form_for [@group, @message],html: { class: 'right__box__form' } do |f|
             .right__box__form__create-message
