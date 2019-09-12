@@ -1,0 +1,21 @@
+.left
+    .left__side-header
+        .left__side-header__box
+            %h3.left__side-header__box__user-name
+                = current_user.name
+            %ul.left__side-header__box__menu
+                %li.left__side-header__box__menu__group-create
+                    = link_to new_group_path do
+                        = fa_icon 'pencil-square-o', class: 'icon'
+                %li.left__side-header__box__menu__edit
+                    = link_to edit_user_path(current_user) do
+                        = fa_icon 'cog', class: 'icon'
+    .left__side-bottom
+        - current_user.groups.each do |group|
+            .left__side-bottom__group
+                = link_to group_messages_path(group) do
+                    .left__side-bottom__group__title
+                        = group.name
+                    .left__side-bottom__group__message
+                        メッセージはまだありません。
+    

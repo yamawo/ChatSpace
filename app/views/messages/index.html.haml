@@ -1,0 +1,28 @@
+= render "devise/shared/side_bar"
+.right
+    .right__main-header
+        .right__main-header__edit
+            =link_to "https://www.facebook.com/" do
+                Edit
+        .right__main-header__left-box
+            .right__main-header__left-box__group-name
+                グループ名
+            .right__main-header__left-box__group-member
+                Member : ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    .right__messages
+        .right__messages__message
+            .right__messages__message__upper-box
+                .right__messages__message__upper-box__name
+                    yamasaki
+                .right__messages__message__upper-box__date
+                    2019-09-07
+            .right__messages__message__text
+                おはよう
+    .right__box
+        = form_for [@group, @message],html: { class: 'right__box__form' } do |f|
+            .right__box__form__create-message
+                = f.text_field :content, class: "right__box__form__create-message__text", placeholder: "type a message"  
+                = f.label :image, class: "right__box__form__create-message__label" do
+                    = fa_icon "picture-o", class: "icon"
+                    = f.file_field :image, class: "right__box__form__create-message__image" 
+            = f.submit "Send", class: "right__box__form__send"
