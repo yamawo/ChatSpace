@@ -59,11 +59,10 @@
             }
         }
     }
-    &__box{     // formのグレー部,全ての箱
+    &__box{     // formのグレー部,一番大きな箱
         background-color: #a9a9a9;
         height: 50px;
         position: fixed;  
-        z-index: 1;       
         bottom: 0;        
         width: calc(100vw - 380px);
         padding: 20px 40px;
@@ -74,14 +73,12 @@
                 width: 100%;
                 padding: 0 40px 0 10px;
                 &__text {
-                    background-color: #fafafa;
                     color: $main-message-font-color;
                     height: 50px;
                     width: 100%;
                     padding-left: 10px;
                     margin-right: 10px;
                     border-style: none;
-                    
                 }
                 &__label {
                     position: absolute;

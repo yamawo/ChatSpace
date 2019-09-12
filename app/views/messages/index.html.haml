@@ -1,21 +1,4 @@
-.left
-    .left__side-header
-        .left__side-header__box
-            .left__side-header__box__user-name
-                Username
-            .left__side-header__box__menu
-                .left__side-header__box__menu__group-create
-                    =link_to "https://www.facebook.com/" do
-                        = fa_icon 'edit'
-                .left__side-header__box__menu__edit
-                    =link_to "https://www.facebook.com/" do
-                        = fa_icon 'cog'
-    .left__side-bottom
-        .left__side-bottom__group
-            .left__side-bottom__group__title
-                グループ名
-            .left__side-bottom__group__message
-                グループ内のメッセージ
+= render "devise/shared/side_bar"
 .right
     .right__main-header
         .right__main-header__edit
@@ -36,12 +19,10 @@
             .right__messages__message__text
                 おはよう
     .right__box
-        %form(action="/public/images" method="post" enctype="multipart/form-data" class="right__box__form")
+        = form_for [@group, @message],html: { class: 'right__box__form' } do |f|
             .right__box__form__create-message
-                %input(type="text" name="message[content]" placeholder="type a message" class="right__box__form__create-message__text")/
-                %label.right__box__form__create-message__label{for: "upload-icon"}
-                    %i.fa.fa-picture-o
-                %input{:type => "file", :name => "message[image]", :id => "upload-icon", :class => "right__box__form__create-message__image"}
-            %input(type="submit" name="commit" value="Send" class="right__box__form__send")/
-
-
+                = f.text_field :content, class: "right__box__form__create-message__text", placeholder: "type a message"  
+                = f.label :image, class: "right__box__form__create-message__label" do
+                    = fa_icon "picture-o", class: "icon"
+                    = f.file_field :image, class: "right__box__form__create-message__image" 
+            = f.submit "Send", class: "right__box__form__send"
