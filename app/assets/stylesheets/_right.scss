@@ -29,6 +29,10 @@
                 font-size: 12px;
                 color: $main-date-font-color;
                 margin-top: 15px;
+                &__name {
+                    list-style: none;
+                    display: inline-block;
+                }
             }
         }
     }   
