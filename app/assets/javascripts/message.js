@@ -36,13 +36,8 @@ $(document).on('turbolinks:load', function(){
             var html = buildHTML(data);
             $('.right__messages').append(html);
             $('#message_content').val('');
-            function scrollBottom(){
-                var target = $('.right__messages').last();
-                var position = target.offset().top + $('.right__messages__message').scrollTop();
-                $('.right__messages__message').animate({
-                  scrollTop: position
-                }, 300, 'swing');
-              }
+            $('.right__messages').animate({scrollTop: $('.right__messages')[0].scrollHeight}, 'fast');   
+            $('form')[0].reset();
         })
         .fail(function(data){
             alert('エラーによりメッセージが送信できませんでした');
