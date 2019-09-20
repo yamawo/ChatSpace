@@ -7,11 +7,11 @@
         .right__main-header__left-box
             .right__main-header__left-box__group-name
                 = @group.name
-            .right__main-header__left-box__group-member
+            %ul.right__main-header__left-box__group-member
                 Member : 
                 - @group.users.each do |user|
                     %li.right__main-header__left-box__group-member__name 
-                        #{user.name}
+                        = user.name
     .right__messages
         = render @messages
     .right__box

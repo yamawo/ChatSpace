@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function(){
     function buildHTML(message) {
-        var image_element = message.image.url ? `<img class="lower-message__image" src="${message.image}"/>` : "";
-        var html = `<div class="right__messages__message">
+        var image_element = message.image.url ? `<img class="lower-message__image" src="${message.image.url}"/>` : "";
+        var html = `<div class="right__messages__message" data-message-id="${message.id}">
                         <div class="right__messages__message__upper-box">
                             <div class="right__messages__message__upper-box__name">
                                 ${message.user_name}
@@ -47,7 +47,7 @@ $(document).on('turbolinks:load', function(){
 
     var reloadMessages = function() {
         if (window.location.href.match(/\/groups\/\d+\/messages/)){
-        last_message_id = $('.right__messages__message').data('message-id');
+    var last_message_id = $('.right__messages__message').last().data('message-id');
         $.ajax({
             url: "api/messages",
             type: 'GET',
