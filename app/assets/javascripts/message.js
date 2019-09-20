@@ -63,7 +63,7 @@ $(document).on('turbolinks:load', function(){
             })
         })
         .fail(function(messages) {
-            console.log('error');
+            alert('error');
         });
         };
     };
