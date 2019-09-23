@@ -3,6 +3,16 @@
 .left {
     width: 300px;
     float: left;
+    a {
+        text-decoration: none;
+    }
+    a:link {
+        color: #ffffff;
+    }
+    a:visited {
+        color: #ffffff;
+    }
+
     &__side-header {
         background-color: $side-header-color;
         height: 100px;
